@@ -7,7 +7,7 @@ from Enteties.Track import Track
 
 
 def main():
-    resource = open("Resources/classical.json", "r", encoding="utf-8")
+    resource = open("Resources/KaggleTestsOnData/classical.json", "r", encoding="utf-8")
     pseudo_data_lake = json.load(resource)
     pseudo_data_warehouse = [Track(key,
                                    pseudo_data_lake[key]["artist"],
