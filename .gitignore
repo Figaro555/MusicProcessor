@@ -2,3 +2,8 @@ venv
 .idea
 Enteties/__pycache__/
 __pycache__/
+
+AWSconfig.py
+config.py
+
+Resources/**
