@@ -4,6 +4,7 @@ from collections import defaultdict
 
 from AWSDownloader import AWSDownloader
 
+
 class PseudoDataLake:
     resource_path = "./Resources"
     json_map = defaultdict(dict)

@@ -4,7 +4,7 @@ from Enteties.Section import Section
 from Enteties.Segment import Segment
 from Enteties.Track import Track
 from PseudoDataLake import PseudoDataLake
-from config import host, user, password, db_name, port
+from Configs.config import host, user, password, db_name, port
 
 
 def main():

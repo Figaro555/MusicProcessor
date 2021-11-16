@@ -2,7 +2,7 @@ import os
 
 import boto3
 
-from AWSconfig import access_key, secret_access_key, bucket_name
+from Configs.AWSconfig import access_key, secret_access_key, bucket_name
 
 
 class AWSDownloader:
