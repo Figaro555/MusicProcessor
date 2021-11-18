@@ -1,4 +1,5 @@
 import psycopg2
+
 from Configs.config import host, user, password, db_name, port
 
 
@@ -40,9 +41,6 @@ class DBLoader:
                                                     VALUES (%s, %s, %s, %s)"""
                         cursor.execute(section_insert_queue, (
                             section.start, section.duration, section.loudness, track_id))
-
-                    print(track_id)
-                print(track.song_name)
 
         except Exception as _ex:
             print("[INFO] Error while working with PostgreSQL", _ex)
