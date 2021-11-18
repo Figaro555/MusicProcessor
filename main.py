@@ -1,4 +1,5 @@
-from DBLoader import DBLoader
+from DB.DBLoader import DBLoader
+from DB.DBLoaderRDS import DBLoaderRDS
 from Enteties.Section import Section
 from Enteties.Segment import Segment
 from Enteties.Track import Track
@@ -31,6 +32,10 @@ def main():
 
                                                )
                                          for key in pseudo_data_lake.json_map[category].keys()])
+        dbl = DBLoaderRDS(local_pseudo_data_warehouse)
+        # dbl.create_tables()
+        dbl.load()
+
         db_loader = DBLoader(local_pseudo_data_warehouse)
         db_loader.load_data()
 
