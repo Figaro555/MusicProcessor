@@ -33,12 +33,27 @@ def main():
 
                                                )
                                          for key in pseudo_data_lake.json_map[category].keys()])
-        dbl = DBLoaderRDS(local_pseudo_data_warehouse)
-        dbl.create_tables()
-        dbl.load()
 
-        db_loader = DBLoader(local_pseudo_data_warehouse)
-        db_loader.load_data()
+        try:
+            db_loader = DBLoader(local_pseudo_data_warehouse)
+            db_loader.load_data()
+            db_loader.create_tables()
+            db_loader.create_tracking_tables()
+        except Exception as _ex:
+            print("[ERROR] Error while working with PostgreSQL locally", _ex)
+        finally:
+            if db_loader.connection:
+                db_loader.connection.close()
+
+        try:
+            dbl = DBLoaderRDS(local_pseudo_data_warehouse)
+            dbl.create_tables()
+            dbl.load()
+        except Exception as _ex:
+            print("[ERROR] Error while working with PostgreSQL", _ex)
+        finally:
+            if dbl.connection:
+                dbl.connection.close()
 
 
 if __name__ == '__main__':
