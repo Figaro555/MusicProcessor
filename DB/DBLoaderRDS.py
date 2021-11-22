@@ -14,6 +14,24 @@ class DBLoaderRDS:
                 password=master_password,
                 database=initial_db_name,
                 port=RDS_port
+            )
+            connection.set_session(autocommit=True)
+            with connection.cursor() as cursor:
+                cursor.execute(open("DB/generate_tables.sql", "r").read())
+        except Exception as _ex:
+            print("[INFO] Error while working with PostgreSQL", _ex)
+        finally:
+            if connection:
+                connection.close()
+
+    def create_tables(self):
+        try:
+            connection = psycopg2.connect(
+                host=endpoint,
+                user=master_username,
+                password=master_password,
+                database=initial_db_name,
+                port=RDS_port
 
             )
             connection.set_session(autocommit=True)

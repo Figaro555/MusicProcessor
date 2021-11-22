@@ -8,6 +8,24 @@ class DBLoader:
     def __init__(self, local_dwh):
         self.local_DWH = local_dwh
 
+    def create_tracking_tables(self):
+        try:
+            connection = psycopg2.connect(
+                host=host,
+                user=user,
+                password=password,
+                database=db_name,
+                port=port
+
+            )
+            with connection.cursor() as cursor:
+                cursor.execute(open("DB/generate_tracking_tables.sql", "r").read())
+        except Exception as _ex:
+            print("[ERROR] Error while working with PostgreSQL", _ex)
+        finally:
+            if connection:
+                connection.close()
+
     def load_data(self):
         try:
             connection = psycopg2.connect(
