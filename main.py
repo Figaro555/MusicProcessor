@@ -9,6 +9,7 @@ from PseudoDataLake import PseudoDataLake
 def main():
     pseudo_data_lake = PseudoDataLake()
     local_pseudo_data_warehouse = []
+    print("[INFO] data was downloaded")
 
     for category in pseudo_data_lake.json_map:
         local_pseudo_data_warehouse += ([Track(key,

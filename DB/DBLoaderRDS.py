@@ -42,8 +42,11 @@ class DBLoaderRDS:
                     track_insert_queue = """    INSERT INTO
                                                 Tracks(author, song, duration)  
                                                 VALUES (%s, %s, %s) RETURNING id"""
+
                     cursor.execute(track_insert_queue, (track.artist, track.song_name, track.duration))
                     track_id = cursor.fetchone()[0]
+
+                    print("[INFO] Inserted track", track.song_name)
 
                     for segment in track.segments:
                         segment_insert_queue = """  INSERT INTO 
@@ -52,6 +55,7 @@ class DBLoaderRDS:
                         cursor.execute(segment_insert_queue, (
                             segment.start, segment.duration, segment.loudness_start, segment.loudness_max_time,
                             segment.loudness_max, track_id))
+                        print("[INFO] Inserted segment", segment.start, "to track", track.song_name)
 
                     for section in track.sections:
                         section_insert_queue = """  INSERT INTO 
@@ -59,9 +63,8 @@ class DBLoaderRDS:
                                                     VALUES (%s, %s, %s, %s)"""
                         cursor.execute(section_insert_queue, (
                             section.start, section.duration, section.loudness, track_id))
+                    print("[INFO] Inserted section", section.start, "to track", track.song_name)
 
-                    print(track_id)
-                print(track.song_name)
 
         except Exception as _ex:
             print("[INFO] Error while working with PostgreSQL", _ex)
