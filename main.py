@@ -1,4 +1,3 @@
-from DB.DBLoader import DBLoader
 from DB.DBLoaderRDS import DBLoaderRDS
 from Enteties.Section import Section
 from Enteties.Segment import Segment
@@ -33,17 +32,6 @@ def main():
 
                                                )
                                          for key in pseudo_data_lake.json_map[category].keys()])
-
-        try:
-            db_loader = DBLoader(local_pseudo_data_warehouse)
-            db_loader.load_data()
-            db_loader.create_tables()
-            db_loader.create_tracking_tables()
-        except Exception as _ex:
-            print("[ERROR] Error while working with PostgreSQL locally", _ex)
-        finally:
-            if db_loader.connection:
-                db_loader.connection.close()
 
         try:
             dbl = DBLoaderRDS(local_pseudo_data_warehouse)
