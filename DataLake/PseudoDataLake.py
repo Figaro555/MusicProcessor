@@ -1,12 +1,12 @@
 import json
 from collections import defaultdict
 
-from AWSDownloader import AWSDownloader
-from Configs.AWSconfig import bucket_name
+from DataLake.Loaders.AWSDownloader import AWSDownloader
+from Configs.BucketConfig import bucket_name
 
 
 class PseudoDataLake:
-    resource_path = "./Resources"
+    resource_path = "../Resources"
     json_map = defaultdict(dict)
 
     def __init__(self):

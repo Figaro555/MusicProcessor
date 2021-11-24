@@ -1,8 +1,8 @@
-from DB.DBLoaderRDS import DBLoaderRDS
-from Enteties.Section import Section
-from Enteties.Segment import Segment
-from Enteties.Track import Track
-from PseudoDataLake import PseudoDataLake
+from DB.KaggleTestOnDataDB.DBLoaderRDS import DBLoaderRDS
+from Enteties.KaggleTestOnData.Section import Section
+from Enteties.KaggleTestOnData.Segment import Segment
+from Enteties.KaggleTestOnData.Track import Track
+from DataLake.PseudoDataLake import PseudoDataLake
 
 
 def main():
