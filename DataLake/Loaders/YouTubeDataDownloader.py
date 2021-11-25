@@ -7,7 +7,7 @@ from DataLake.Loaders.AbstractDownloader import AbstractDownloader
 from googleapiclient.discovery import build
 
 
-class YouTubeDownloader(AbstractDownloader):
+class YouTubeDataDownloader(AbstractDownloader):
 
     def __init__(self):
         self.youtube = build('youtube', 'v3', developerKey=api_key)

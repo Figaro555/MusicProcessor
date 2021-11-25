@@ -3,7 +3,7 @@ from Enteties.YouTubeData.Channel import Channel
 from Transformers.AbstractTransformer import AbstractTransformer
 
 
-class YouTubeTransformer(AbstractTransformer):
+class YouTubeDataTransformer(AbstractTransformer):
 
     def transform_to_local_array(self, local_dl):
         return [Channel(local_dl[key]["id"],
