@@ -1,21 +1,18 @@
 import json
+import os
 from collections import defaultdict
-
-from DataLake.Loaders.AWSDownloader import AWSDownloader
-from Configs.BucketConfig import bucket_name
 
 
 class PseudoDataLake:
-    resource_path = "../Resources"
+    resource_path = "Resources"
     json_map = defaultdict(dict)
 
-    def __init__(self):
-        aws_d = AWSDownloader()
-        file_generator = aws_d.download_s3_folder(aws_d.s3_resources, bucket_name, 'Resources', 'Resources')
+    def __init__(self, downloader_list):
+        for downloader in downloader_list:
+            downloader.download_files(self.resource_path)
 
-        for file in file_generator:
+        for file in os.listdir(self.resource_path):
             if file.endswith(".json"):
                 parsed_json = json.load(open(file, "r", encoding="utf-8"))
                 category_name = file.split("\\")[-2]
                 PseudoDataLake.json_map[category_name] = {**PseudoDataLake.json_map[category_name], **parsed_json}
-

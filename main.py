@@ -1,4 +1,6 @@
 from DB.KaggleTestOnDataDB.DBLoaderRDS import DBLoaderRDS
+from DataLake.Loaders.S3Downloader import S3Downloader
+from DataLake.Loaders.YouTubeDownloader import YouTubeDownloader
 from Enteties.KaggleTestOnData.Section import Section
 from Enteties.KaggleTestOnData.Segment import Segment
 from Enteties.KaggleTestOnData.Track import Track
@@ -6,7 +8,7 @@ from DataLake.PseudoDataLake import PseudoDataLake
 
 
 def main():
-    pseudo_data_lake = PseudoDataLake()
+    pseudo_data_lake = PseudoDataLake([S3Downloader(), YouTubeDownloader()])
     local_pseudo_data_warehouse = []
     print("[INFO] data was downloaded")
 
