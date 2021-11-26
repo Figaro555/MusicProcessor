@@ -1,6 +1,6 @@
-from Enteties.KaggleTestsOnData.Track import Track
-from Enteties.KaggleTestsOnData.Section import Section
-from Enteties.KaggleTestsOnData.Segment import Segment
+from Entities.Kaggle.TestsOnData.Track import Track
+from Entities.Kaggle.TestsOnData.Section import Section
+from Entities.Kaggle.TestsOnData.Segment import Segment
 from Transformers.AbstractTransformer import AbstractTransformer
 
 

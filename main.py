@@ -9,23 +9,16 @@ from Transformers.YouTubeTransformer import YouTubeTransformer
 
 def main():
     pseudo_data_lake = PseudoDataLake([S3Downloader(), YouTubeDownloader()])
+    # pseudo_data_lake = PseudoDataLake([])
     print("[INFO] data was downloaded")
 
     local_DWH = {
-        "KaggleTestsOnData": KaggleTestsOnDataTransformer().transform_to_local_array(
-            pseudo_data_lake.json_map["KaggleTestsOnData"]
+        "TestsOnData": KaggleTestsOnDataTransformer().transform_to_local_array(
+            pseudo_data_lake.json_map["TestsOnData"]
         ),
         "YouTubeData": YouTubeTransformer().transform_to_local_array(pseudo_data_lake.json_map["YouTubeData"])
     }
 
-    try:
-        dbl = KaggleTestOnDataLoaderRDS(local_DWH["KaggleTestsOnData"])
-        dbl.load()
-    except Exception as _ex:
-        print("[ERROR] Error while connection with PostgreSQL", _ex)
-    finally:
-        if dbl.connection:
-            dbl.connection.close()
     try:
         dbl2 = YouTubeLoaderRDS(local_DWH["YouTubeData"])
         dbl2.load()
@@ -35,6 +28,15 @@ def main():
     finally:
         if dbl2.connection:
             dbl2.connection.close()
+    try:
+        dbl = KaggleTestOnDataLoaderRDS(local_DWH["TestsOnData"])
+        dbl.load()
+    except Exception as _ex:
+        print("[ERROR] Error while connection with PostgreSQL", _ex)
+    finally:
+        if dbl.connection:
+            dbl.connection.close()
+
 
 
 if __name__ == '__main__':

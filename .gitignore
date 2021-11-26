@@ -1,6 +1,6 @@
 venv
 .idea
-Enteties/__pycache__/
+Entities/__pycache__/
 __pycache__/
 Configs
 Resources/**

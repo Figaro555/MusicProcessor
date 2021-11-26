@@ -1,5 +1,5 @@
-from Enteties.YouTubeData.Video import Video
-from Enteties.YouTubeData.Channel import Channel
+from Entities.YouTubeData.Video import Video
+from Entities.YouTubeData.Channel import Channel
 from Transformers.AbstractTransformer import AbstractTransformer
 
 
