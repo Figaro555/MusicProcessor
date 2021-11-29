@@ -1,4 +1,4 @@
-from DB.Connectors.PostgresConnector import PostgresConnector
+from Connectors.DB.PostgresConnector import PostgresConnector
 from DB.DBManagers.AbstractDBManager import AbstractDBManager
 from DB.Initializers.Kaggle.KaggleInitializer import KaggleInitializer
 from DB.Loaders.Kaggle.SectionLoader import SectionLoader

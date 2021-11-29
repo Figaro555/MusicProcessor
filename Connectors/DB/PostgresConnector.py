@@ -1,7 +1,7 @@
 import psycopg2
 
 from Configs.RDSconfig import *
-from DB.Connectors.AbstractConnector import AbstractConnector
+from Connectors.AbstractConnector import AbstractConnector
 from time import time
 
 

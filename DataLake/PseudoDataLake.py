@@ -9,7 +9,7 @@ class PseudoDataLake:
 
     def __init__(self, downloader_list):
         for downloader in downloader_list:
-            downloader.download_files(self.resource_path)
+            downloader.save(self.resource_path)
 
         for root, dirs, files in os.walk(self.resource_path):
             for file in files:

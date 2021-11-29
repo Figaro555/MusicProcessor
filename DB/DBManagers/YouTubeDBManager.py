@@ -1,4 +1,4 @@
-from DB.Connectors.PostgresConnector import PostgresConnector
+from Connectors.DB.PostgresConnector import PostgresConnector
 from DB.DBManagers.AbstractDBManager import AbstractDBManager
 from DB.Initializers.YouTube.YouTubeInitializer import YouTubeInitializer
 from DB.Loaders.YouTube.ChannelLoader import ChannelLoader

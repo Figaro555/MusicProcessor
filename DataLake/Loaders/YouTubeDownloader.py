@@ -35,6 +35,7 @@ class YouTubeDownloader(AbstractDownloader):
             )
             pl_response = pl_request.execute()
 
+
             videos = {}
             for item in pl_response["items"]:
                 v_request = self.youtube.videos().list(
