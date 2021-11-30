@@ -1,8 +1,8 @@
 venv
 .idea
-Entities/__pycache__/
+project/Entities/__pycache__/
 __pycache__/
-Configs
-Resources/**
+project/Configs
+project/Resources/**
 cloudFormation.yaml
-test
+test/TransformersTest
