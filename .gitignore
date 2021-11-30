@@ -6,3 +6,5 @@ project/Configs
 project/Resources/**
 cloudFormation.yaml
 test/TransformersTest
+test/DBLoader.py
+test/main_test.py
