@@ -4,7 +4,7 @@ from project.Entities.Kaggle.TestsOnData.Segment import Segment
 from project.Transformers.AbstractTransformer import AbstractTransformer
 
 
-class KaggleTestsOnDataTransformer(AbstractTransformer):
+class TestsOnDataTransformer(AbstractTransformer):
 
     def transform_to_local_array(self, local_dl):
         return [Track(key,
