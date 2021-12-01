@@ -66,5 +66,8 @@ class YouTubeTransformerTest(TestCase):
             expected_result
         )
 
+    def test_transform_to_local_array_failure(self):
+        self.assertRaises(TypeError, self.yt.transform_to_local_array, 2)
+
     if __name__ == '__main__':
         main()
