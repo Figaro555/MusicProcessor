@@ -6,6 +6,9 @@ from project.Transformers.AbstractTransformer import AbstractTransformer
 class YouTubeTransformer(AbstractTransformer):
 
     def transform_to_local_array(self, local_dl):
+        if not hasattr(local_dl, '__iter__'):
+            raise TypeError("object is not iterable")
+
         return [Channel(channel["items"][0]["id"],
                         channel["items"][0]["snippet"]["title"],
                         channel["items"][0]["statistics"]["videoCount"],

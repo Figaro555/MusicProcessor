@@ -7,6 +7,9 @@ from project.Transformers.AbstractTransformer import AbstractTransformer
 class TestsOnDataTransformer(AbstractTransformer):
 
     def transform_to_local_array(self, local_dl):
+        if not hasattr(local_dl, '__iter__'):
+            raise TypeError("object is not iterable")
+
         return [Track(key,
                       local_dl[key]["artist"],
                       local_dl[key]["song"],
