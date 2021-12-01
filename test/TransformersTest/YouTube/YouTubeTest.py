@@ -39,6 +39,32 @@ class YouTubeTransformerTest(TestCase):
         result = self.yt.transform_to_local_array(self.parsed_json["root"])
         self.assertTrue(type(result[0].videos[0]) is Video)
 
+    def test_transform_to_local_array_comparing_full_result(self):
+        result = self.yt.transform_to_local_array(self.parsed_json["root"])
+        expected_result = Channel(channel_id='UCsK1oV0PGkcZ1UhFtajx0dg',
+                                  hidden_subscriber_count=False,
+                                  title='Redroom',
+                                  video_count='242',
+                                  view_count='76260162',
+                                  videos=[
+                                      Video(like_count='5587',
+                                            title='Клеопатра - последняя царица Древнего Египта',
+                                            video_id='Nft7eSj7j30',
+                                            view_count='40685'),
+                                      Video(like_count='16426',
+                                            title='Марокко: империя, которая (не) смогла',
+                                            video_id='Ptqms7jwuMg',
+                                            view_count='161648'),
+                                      Video(like_count='15517',
+                                            title='Шри Ланка: гражданская война и терроризм на райском острове. Тигры освобождения Тамил-Илама',
+                                            video_id='0QxP8LwHEfw',
+                                            view_count='172180')
+                                  ]
+                                  )
+        self.assertTrue(
+            result[0],
+            expected_result
+        )
 
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
