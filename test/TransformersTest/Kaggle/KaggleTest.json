@@ -1,0 +1,178 @@
+{
+  "spotify:track:5gICNh1EHmDlpyWERFitXG": {
+    "artist": "Southern Avenue",
+    "song": "Savior",
+    "meta": {
+      "meta": {
+        "analyzer_version": "4.0.0",
+        "platform": "Linux",
+        "detailed_status": "OK",
+        "status_code": 0,
+        "timestamp": 1554942398,
+        "analysis_time": 6.99139,
+        "input_process": "libvorbisfile L+R 44100->22050"
+      },
+      "track": {
+        "num_samples": 4927965,
+        "duration": 223.49048,
+        "sample_md5": "",
+        "offset_seconds": 0,
+        "window_seconds": 0,
+        "analysis_sample_rate": 22050,
+        "analysis_channels": 1,
+        "end_of_fade_in": 0.12163,
+        "start_of_fade_out": 217.37941,
+        "loudness": -3.996,
+        "tempo": 68.184,
+        "tempo_confidence": 0.12,
+        "time_signature": 4,
+        "time_signature_confidence": 0.992,
+        "key": 11,
+        "key_confidence": 1.0,
+        "mode": 0,
+        "mode_confidence": 0.939,
+        "rhythm_version": 1.0
+      },
+      "sections": [
+        {
+          "start": 0.0,
+          "duration": 36.15176,
+          "confidence": 1.0,
+          "loudness": -8.416,
+          "tempo": 68.416,
+          "tempo_confidence": 0.667,
+          "key": 11,
+          "key_confidence": 0.236,
+          "mode": 0,
+          "mode_confidence": 0.647,
+          "time_signature": 4,
+          "time_signature_confidence": 1.0
+        },
+        {
+          "start": 36.15176,
+          "duration": 42.0297,
+          "confidence": 0.168,
+          "loudness": -3.606,
+          "tempo": 68.551,
+          "tempo_confidence": 0.394,
+          "key": 11,
+          "key_confidence": 0.074,
+          "mode": 0,
+          "mode_confidence": 0.627,
+          "time_signature": 4,
+          "time_signature_confidence": 0.957
+        }
+      ],
+      "segments": [
+        {
+          "start": 0.0,
+          "duration": 0.12163,
+          "confidence": 0.0,
+          "loudness_start": -60.0,
+          "loudness_max_time": 0.0,
+          "loudness_max": -60.0,
+          "pitches": [
+            0.788,
+            0.34,
+            0.149,
+            0.117,
+            0.104,
+            0.118,
+            0.323,
+            0.304,
+            0.821,
+            0.806,
+            1.0,
+            0.049
+          ],
+          "timbre": [
+            0.021,
+            170.618,
+            9.064,
+            -29.123,
+            57.265,
+            -50.111,
+            14.685,
+            4.673,
+            -27.426,
+            0.848,
+            -10.507,
+            -6.771
+          ]
+        },
+        {
+          "start": 0.12163,
+          "duration": 0.55129,
+          "confidence": 1.0,
+          "loudness_start": -60.0,
+          "loudness_max_time": 0.25127,
+          "loudness_max": -9.87,
+          "pitches": [
+            0.155,
+            0.118,
+            0.332,
+            0.229,
+            1.0,
+            0.163,
+            0.583,
+            0.118,
+            0.163,
+            0.139,
+            0.215,
+            0.778
+          ],
+          "timbre": [
+            22.855,
+            111.271,
+            143.554,
+            -399.726,
+            27.082,
+            110.98,
+            32.336,
+            -61.693,
+            -62.792,
+            49.881,
+            -29.246,
+            10.484
+          ]
+        },
+        {
+          "start": 0.67293,
+          "duration": 0.39628,
+          "confidence": 0.206,
+          "loudness_start": -23.007,
+          "loudness_max_time": 0.02625,
+          "loudness_max": -18.931,
+          "pitches": [
+            0.053,
+            0.01,
+            0.068,
+            0.021,
+            0.039,
+            0.019,
+            0.045,
+            0.011,
+            0.011,
+            0.034,
+            0.025,
+            1.0
+          ],
+          "timbre": [
+            36.033,
+            -36.576,
+            -25.917,
+            50.053,
+            -23.896,
+            -25.993,
+            -63.313,
+            -17.873,
+            -25.204,
+            -22.602,
+            -6.676,
+            3.061
+          ]
+        }
+      ]
+    }
+  }
+}
