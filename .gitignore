@@ -1,0 +1,8 @@
+venv
+.idea
+project/Entities/__pycache__/
+__pycache__/
+project/Configs
+project/Resources/**
+cloudFormation.yaml
+
