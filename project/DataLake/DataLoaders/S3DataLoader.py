@@ -2,10 +2,10 @@ import os
 
 from project.Configs.BucketConfig import *
 from project.Connectors.DL.S3Connector import S3Connector
-from project.DataLake.DataSavers.AbstractDataSaver import AbstractDataSaver
+from project.DataLake.DataLoaders.AbstractDataLoader import AbstractDataLoader
 
 
-class S3DataSaver(AbstractDataSaver):
+class S3DataLoader(AbstractDataLoader):
     def __init__(self):
         self.connector = S3Connector()
 

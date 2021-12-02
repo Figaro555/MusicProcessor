@@ -4,10 +4,10 @@ from project.Configs.YouTubeConfig import my_channels_id
 from project.Connectors.DL.YouTubeConnector import YouTubeConnector
 from project.DataLake.DataGetters.YouTube.ChannelDataGetter import ChannelDataGetter
 from project.DataLake.DataGetters.YouTube.VideoDataGetter import VideoDataGetter
-from project.DataLake.DataSavers.AbstractDataSaver import AbstractDataSaver
+from project.DataLake.DataLoaders.AbstractDataLoader import AbstractDataLoader
 
 
-class YouTubeDataSaver(AbstractDataSaver):
+class YouTubeDataLoader(AbstractDataLoader):
     def __init__(self):
         self.channel_getter = ChannelDataGetter()
         self.video_getter = VideoDataGetter()

@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractDataSaver(ABC):
+class AbstractDataLoader(ABC):
     @abstractmethod
     def save(self):
         pass

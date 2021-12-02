@@ -1,14 +1,14 @@
 from project.DB.DBManagers.KaggleDBManager import KaggleDBManager
 from project.DB.DBManagers.YouTubeDBManager import YouTubeDBManager
-from project.DataLake.DataSavers.S3DataSaver import S3DataSaver
-from project.DataLake.DataSavers.YouTubeDataSaver import YouTubeDataSaver
+from project.DataLake.DataLoaders.S3DataLoader import S3DataLoader
+from project.DataLake.DataLoaders.YouTubeDataLoader import YouTubeDataLoader
 from project.DataLake.PseudoDataLake import PseudoDataLake
 from project.Transformers.Kaggle.TestsOnDataTransformer import TestsOnDataTransformer
 from project.Transformers.YouTubeTransformer import YouTubeTransformer
 
 
 def main():
-    pseudo_data_lake = PseudoDataLake([YouTubeDataSaver(), S3DataSaver()])
+    pseudo_data_lake = PseudoDataLake([YouTubeDataLoader(), S3DataLoader()])
     print("[INFO] data was downloaded")
 
     local_DWH = {
