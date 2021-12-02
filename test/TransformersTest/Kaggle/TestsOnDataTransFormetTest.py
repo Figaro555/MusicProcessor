@@ -93,6 +93,9 @@ class KaggleTestsOnDataTransformerTest(TestCase):
     def test_transform_to_local_array_failure(self):
         self.assertRaises(TypeError, self.tt.transform_to_local_array, 2)
 
+    def test_transform_to_local_array_failure_with_wrong_array(self):
+        self.assertRaises(TypeError, self.tt.transform_to_local_array, [2])
+
 
 if __name__ == '__main__':
     main()
