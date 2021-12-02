@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractInitializer(ABC):
+class AbstractTablesCreator(ABC):
     @abstractmethod
     def create_tables(self):
         pass
