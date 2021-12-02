@@ -1,10 +1,10 @@
 from project.Connectors.DB.PostgresConnector import PostgresConnector
-from project.DB.DBManagers.AbstractDBManager import AbstractDBManager
+from project.DB.DataManagers.AbstractDataManager import AbstractDataManager
 from project.DB.Loaders.YouTube.ChannelLoader import ChannelLoader
 from project.DB.Loaders.YouTube.VideoLoader import VideoLoader
 
 
-class YouTubeDBManager(AbstractDBManager):
+class YouTubeDataManager(AbstractDataManager):
     def __init__(self):
         self.connector = PostgresConnector()
 

@@ -1,11 +1,11 @@
 from project.Connectors.DB.PostgresConnector import PostgresConnector
-from project.DB.DBManagers.AbstractDBManager import AbstractDBManager
+from project.DB.DataManagers.AbstractDataManager import AbstractDataManager
 from project.DB.Loaders.Kaggle.SectionLoader import SectionLoader
 from project.DB.Loaders.Kaggle.SegmentLoader import SegmentLoader
 from project.DB.Loaders.Kaggle.TrackLoader import TrackLoader
 
 
-class KaggleDBManager(AbstractDBManager):
+class KaggleDataManager(AbstractDataManager):
     def __init__(self):
         self.connector = PostgresConnector()
         self.track_loader = TrackLoader(self.connector)

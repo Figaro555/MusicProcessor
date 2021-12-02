@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class AbstractDBManager(ABC):
+class AbstractDataManager(ABC):
     @abstractmethod
     def process_data(self):
         pass

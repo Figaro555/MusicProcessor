@@ -1,5 +1,5 @@
-from project.DB.DBManagers.KaggleDBManager import KaggleDBManager
-from project.DB.DBManagers.YouTubeDBManager import YouTubeDBManager
+from project.DB.DataManagers.KaggleDataManager import KaggleDataManager
+from project.DB.DataManagers.YouTubeDataManager import YouTubeDataManager
 from project.DataLake.DataLoaders.S3DataLoader import S3DataLoader
 from project.DataLake.DataLoaders.YouTubeDataLoader import YouTubeDataLoader
 from project.DataLake.PseudoDataLake import PseudoDataLake
@@ -18,10 +18,10 @@ def main():
         "YouTubeData": YouTubeTransformer().transform_to_local_array(pseudo_data_lake.json_map["YouTubeData"]["root"])
     }
 
-    yt_manager = YouTubeDBManager()
+    yt_manager = YouTubeDataManager()
     yt_manager.process_data(local_DWH["YouTubeData"])
 
-    k_manager = KaggleDBManager()
+    k_manager = KaggleDataManager()
     k_manager.process_data(local_DWH["TestsOnData"])
 
 
