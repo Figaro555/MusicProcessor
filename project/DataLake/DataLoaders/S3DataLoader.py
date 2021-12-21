@@ -18,3 +18,4 @@ class S3DataLoader(AbstractDataLoader):
                 os.makedirs(os.path.dirname(target))
             if obj.key[-1] != '/':
                 bucket.download_file(obj.key, target)
+                print("[INFO]File was downloaded" + obj.key)
