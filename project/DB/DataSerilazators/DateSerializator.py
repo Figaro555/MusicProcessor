@@ -1,4 +1,4 @@
-from datetime import time
+import time
 
 from project.DB.DataSerilazators.AbstractDataSerializator import AbstractDataSerializator
 
@@ -6,4 +6,4 @@ from project.DB.DataSerilazators.AbstractDataSerializator import AbstractDataSer
 class DateSerializator(AbstractDataSerializator):
     def serialize(self, date):
         date_info = time.strftime("%x", time.localtime(date)).split('/')
-        return {"id": round(date), "day": date_info[1], "month": date_info[0], "year": date_info[2]}
+        return {"id": round(date), "day": int(date_info[1]), "month": int(date_info[0]), "year": int(date_info[2])}
