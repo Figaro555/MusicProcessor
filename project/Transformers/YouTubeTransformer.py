@@ -13,6 +13,7 @@ class YouTubeTransformer(AbstractTransformer):
                             channel["items"][0]["statistics"]["videoCount"],
                             channel["items"][0]["statistics"]["viewCount"],
                             channel["items"][0]["statistics"]["hiddenSubscriberCount"],
+                            channel["items"][0]["snippet"]["description"],
 
                             [Video(video["items"][0]["id"],
                                    video["items"][0]["snippet"]["title"],
